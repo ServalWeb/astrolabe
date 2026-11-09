@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Astrolabe — atlas du système solaire</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%231d4fd8'/%3E%3Ccircle cx='50' cy='50' r='43' fill='none' stroke='%23fff' stroke-width='3'/%3E%3Cellipse cx='50' cy='50' rx='33' ry='11.5' transform='rotate(-24 50 50)' fill='none' stroke='%23fff' stroke-width='5'/%3E%3Ccircle cx='50' cy='51' r='10' fill='%23ffb829'/%3E%3Ccircle cx='64' cy='21.5' r='7' fill='%23ff5a36'/%3E%3C/svg%3E">
+  <meta name="description" content="Explore le Soleil, les huit planètes et cinq planètes naines du système solaire : orbites animées, photos, données scientifiques et comparaisons.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="nav">
+    <a class="logo" href="index.html" aria-label="Astrolabe, atlas du système solaire, accueil">
+      <!-- insigne : limbe gradué d'astrolabe, Soleil, orbite, planète et comète -->
+      <svg viewBox="0 0 100 100" width="42" height="42" aria-hidden="true">
+        <defs>
+          <radialGradient id="logo-bg" cx="38%" cy="30%" r="80%">
+            <stop offset="0" stop-color="#2f6bff"/>
+            <stop offset="1" stop-color="#0a2470"/>
+          </radialGradient>
+          <linearGradient id="logo-trail" x1="0" y1="1" x2="1" y2="0">
+            <stop offset="0" stop-color="#ff5a36" stop-opacity="0"/>
+            <stop offset="1" stop-color="#ff5a36"/>
+          </linearGradient>
+          <clipPath id="logo-clip"><circle cx="50" cy="50" r="40"/></clipPath>
+        </defs>
+        <circle cx="50" cy="50" r="48" fill="url(#logo-bg)"/>
+        <circle cx="50" cy="50" r="44.5" fill="none" stroke="#fff" stroke-width="1.6"/>
+        <g stroke="#fff" stroke-width="2.4" stroke-linecap="round">
+          <line x1="50" y1="5.5" x2="50" y2="10.5"/>
+          <line x1="50" y1="5.5" x2="50" y2="10.5" transform="rotate(30 50 50)"/>
+          <line x1="50" y1="5.5" x2="50" y2="10.5" transform="rotate(60 50 50)"/>
+          <line x1="50" y1="5.5" x2="50" y2="10.5" transform="rotate(90 50 50)"/>
+          <line x1="50" y1="5.5" x2="50" y2="10.5" transform="rotate(120 50 50)"/>
+          <line x1="50" y1="5.5" x2="50" y2="10.5" transform="rotate(150 50 50)"/>
+          <line x1="50" y1="5.5" x2="50" y2="10.5" transform="rotate(180 50 50)"/>
+          <line x1="50" y1="5.5" x2="50" y2="10.5" transform="rotate(210 50 50)"/>
+          <line x1="50" y1="5.5" x2="50" y2="10.5" transform="rotate(240 50 50)"/>
+          <line x1="50" y1="5.5" x2="50" y2="10.5" transform="rotate(270 50 50)"/>
+          <line x1="50" y1="5.5" x2="50" y2="10.5" transform="rotate(300 50 50)"/>
+          <line x1="50" y1="5.5" x2="50" y2="10.5" transform="rotate(330 50 50)"/>
+        </g>
+        <g clip-path="url(#logo-clip)">
+          <g fill="#fff">
+            <circle cx="30" cy="27" r="1.5"/><circle cx="42" cy="19" r="1"/><circle cx="76" cy="44" r="1.2"/>
+            <circle cx="20" cy="50" r="1"/><circle cx="62" cy="80" r="1.5"/><circle cx="40" cy="82" r="1"/>
+            <circle cx="78" cy="64" r="1"/><circle cx="58" cy="16" r="1"/>
+          </g>
+          <ellipse cx="50" cy="50" rx="33" ry="11.5" transform="rotate(-24 50 50)" fill="none" stroke="#fff" stroke-width="2.6"/>
+          <circle cx="50" cy="51" r="8" fill="#ffb829"/>
+          <circle cx="26.2" cy="66.9" r="4" fill="#fff"/>
+          <g transform="translate(-4 -6)">
+            <path d="M8 64 C24 44 44 31 66 24 L69 31 C47 35 27 47 8 64 Z" fill="url(#logo-trail)"/>
+            <circle cx="68" cy="27.5" r="7" fill="#ff5a36" opacity=".55"/>
+            <circle cx="68" cy="27.5" r="4.2" fill="#fff"/>
+          </g>
+        </g>
+      </svg>
+      <span class="brand">
+        <span class="brand-name">Astrolabe</span>
+        <span class="brand-sub">Atlas du système solaire</span>
+      </span>
+    </a>
+    <nav class="nav-links" aria-label="Navigation principale">
+      <a href="index.html" aria-current="page">Accueil</a>
+      <a href="planetes.html">Planètes</a>
+      <a href="comparer.html">Comparer</a>
+      <a href="echelle.html">Échelle</a>
+      <a href="ciel.html">Ciel</a>
+      <a href="eclipses.html">Éclipses</a>
+      <a href="galaxies.html">Galaxies</a>
+      <a href="et-toi.html">Et toi ?</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <section class="hero">
+      <div class="hero-text">
+        <h1 class="sr-only">Astrolabe, atlas du système solaire</h1>
+        <a class="pill" href="planetes.html">Explorer les planètes</a>
+      </div>
+      <div class="hero-visual">
+        <canvas id="orrery" role="img" aria-label="Animation des planètes et planètes naines en orbite autour du Soleil"></canvas>
+        <div class="sim">
+          <p class="caption" id="sim-caption"></p>
+          <div class="ghosts" id="sim-controls">
+            <button class="ghost" type="button" id="pause" aria-pressed="false">Pause</button>
+            <button class="ghost" type="button" data-speed="5">Lent</button>
+            <button class="ghost" type="button" data-speed="30">Normal</button>
+            <button class="ghost" type="button" data-speed="200">Rapide</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wide" id="sommaire">
+      <h2>Par où commencer ?</h2>
+      <p class="label">Les pages de l'atlas</p>
+      <ul class="pages">
+        <li><a href="planetes.html"><span class="role">Fiches</span><b>Planètes</b><span class="dim">Le Soleil, les planètes, les planètes naines, des astéroïdes et des exoplanètes, avec photos et chiffres.</span></a></li>
+        <li><a href="comparer.html"><span class="role">Graphiques</span><b>Comparer</b><span class="dim">Taille, masse, distance, durée de l'année, gravité et lunes, côte à côte.</span></a></li>
+        <li><a href="echelle.html"><span class="role">Tailles réelles</span><b>Échelle</b><span class="dim">Toutes les planètes dessinées à la même échelle.</span></a></li>
+        <li><a href="ciel.html"><span class="role">Carte du ciel</span><b>Ciel</b><span class="dim">Les planètes visibles ce soir depuis ta ville, et où les chercher.</span></a></li>
+        <li><a href="eclipses.html"><span class="role">Calendrier</span><b>Éclipses</b><span class="dim">Les éclipses de Soleil jusqu'en 2036 et les endroits d'où les voir.</span></a></li>
+        <li><a href="galaxies.html"><span class="role">Carte</span><b>Galaxies</b><span class="dim">Les galaxies voisines, placées autour de la Voie lactée.</span></a></li>
+        <li><a href="et-toi.html"><span class="role">Calculateur</span><b>Et toi ?</b><span class="dim">Ton poids et ton âge sur chaque planète.</span></a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p class="caption">Données : NASA Planetary Fact Sheet (NSSDCA) et JPL Solar System Dynamics. Nombres de lunes : décomptes 2025, susceptibles d'évoluer. Données des planètes naines : NASA et JPL, valeurs approchées pour les plus lointaines. Astéroïdes : JPL Small-Body Database et NASA Science. Exoplanètes : NASA Exoplanet Archive (Caltech / IPAC), températures d'équilibre estimées. Éclipses : éléments de Bessel de F. Espenak (NASA GSFC), visibilité et horaires calculés directement dans ton navigateur ; fond de carte Natural Earth (domaine public). Images : NASA, ESA et missions associées, via Wikimedia Commons, enregistrées dans le dossier images pour fonctionner sans connexion.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
